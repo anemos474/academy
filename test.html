@@ -1,0 +1,1863 @@
+<!-- Google Tag Manager (noscript) -->
+<!DOCTYPE html>
+<html>
+<head>
+	<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NDKG3X" style="display:none;visibility:hidden" width="0"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
+	<title></title>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<link href="https://www.tui.ru/getmedia/5c2e8a9e-3a37-46d3-959a-893bdafa87ae/_bootstrap-grid/" rel="stylesheet">
+	<link href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" rel="stylesheet">
+	<link href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css">
+	<link href="https://agent.tui.ru/getmedia/5e9896a3-5dc4-46de-af38-413182b23943/font-awesome-animation" rel="stylesheet">
+	<link href="https://agent.tui.ru/getmedia/b29d4fd7-cb91-4e9d-9e1c-38299bd87af0/style" rel="stylesheet">
+	<style type="text/css">
+
+	/* отключаем футер и хедер и убираем ширину шаблона на белорусском агентском сайте */
+	   .pageWrapper {
+	       width: 100% !important;
+	   }
+
+	   .mainHeader {
+	       display: none !important;
+	   }
+
+	   .contentFooter {
+	       display: none !important;
+	   }
+
+	   .mainFooter {
+	       display: none !important;
+	   }
+	   .spaceBetween{
+	        margin-top: 0px!important;
+	   }
+	   .fullWidthContainer{
+	        margin: 0px!important;
+	        width: 100%!important;
+	   }
+	   .contentContainer {
+	        float: inherit!important;
+	        width: 100%!important;
+	        margin-left: 0px!important;
+	        padding: 0px!important;
+	    }
+	    
+	    .contentContainer h3, .contentContainer .h3{
+	        color: #092a5e!important;
+	    }
+	   /* отключаем футер и хедер и убираем ширину шаблона на белорусском агентском сайте */
+	   @font-face {
+	        font-family: "TUITypeLt";
+	        src: url('https://agent.tui.ua/getmedia/22d230e8-0412-4836-843f-008c88fa373c/TUITypeLight-Regular');   
+	        src: url("https://agent.tui.ua/getmedia/9694865a-dd89-42eb-8505-cb19f71ca6f4/TUITypeLt") format("truetype"),
+	             url("https://agent.tui.ua/getmedia/57a4d30c-0cc3-4d58-b85f-390ed1354549/TUITypeLight-Regular_1") format('woff');  
+	        font-style: normal; 
+	        font-weight: normal; 
+	    } 
+	    body{
+	       font-family: "TUITypeLt"!important;
+	       color: #092a5e!important;
+	   }
+
+	   .btn-top {
+	       position: fixed;
+	       bottom: 50px;
+	       right: 50px;
+	       z-index: 9999999;
+	       cursor: pointer;
+	       display: none;
+	   }
+
+	   .btn-top img {
+	       width: 80px;
+	       background-color: #70cbf4;
+	       -webkit-border-radius: 50%;
+	       border-radius: 50%;
+	       border: 1px solid #fff;
+	   }
+
+	   .action-first {
+	       padding: 35px 0 0px 0;
+	       border-radius: 15px;
+	       background: #e2f3fe;
+	   }
+
+	   .action-second {
+	       border-radius: 15px;
+	       background: #c2e5fa;
+	   }
+
+	   .action-third {
+	       border-radius: 15px;
+	       background: #70cbf4;
+
+	   }
+
+	   .callspace {
+	       margin-top: 25px;
+	       margin-bottom: 35px;
+	   }
+
+	   .callspace-item {
+	       padding-top: 25px;
+	   }
+
+	   .no_line {
+	       border-bottom: none !important;
+	   }
+
+	   header {
+	       background-image: url("https://agent.tui.ru/getmedia/91c6b3f1-d953-4b41-ba5c-66ae337629c4/shutterstock_1452012986");
+	   }
+
+	   /*################################################ Timer  #########################################################################################*/
+	   .countdown {
+	       max-width: 300px;
+	       height: 94px;
+	       cursor: pointer;
+	       position: fixed;
+	       top: 0;
+	       right: 0;
+	       z-index: 99999;
+	       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+	   }
+
+	   .timer-b {
+	       display: inline-block;
+	       padding-right: 10px;
+	       text-align: center;
+	       border-right: solid 1px #ffffff;
+	   }
+
+	   .timer {
+	       padding: 10px 30px 5px 40px;
+	       background: red;
+	   }
+
+	   .last-elem {
+	       border-right: none !important;
+	   }
+
+	   .title-timer {
+	       color: #ffffff;
+	       font-size: 26px;
+	       font-weight: bold;
+	   }
+
+	   .title-discount {
+	       color: #ffffff !important;
+	       font-size: 19px !important;
+	       text-transform: uppercase;
+	       font-weight: normal !important;
+	   }
+
+	   .discount-b span {
+	       font-weight: bold;
+	       font-size: 19px !important;
+	   }
+
+	   .sub-timer {
+	       color: #ffffff;
+	       padding-top: 0px !important;
+	   }
+
+	   .discount-b {
+	       text-align: center;
+	       padding-top: 5px;
+	   }
+
+	   #clock {
+	       text-align: center;
+	       line-height: 21px;
+	   }
+
+	   .page {
+	       background: inherit;
+	   }
+
+	   body {
+	       background: inherit;
+	   }
+
+	   blockquote p {
+	       font-size: 18pt;
+	   }
+
+	   .footer-btn {
+	       background: #092a5e;
+	       color: #fff;
+	       border: 1px solid #092a5e;
+	       text-decoration: none;
+	       padding: .9rem 3rem 0.5rem;
+	       font-size: 18px;
+	       line-height: 1.4;
+	       border-radius: 2px;
+	       word-wrap: break-word;
+	       font-weight: 700;
+	       text-align: center;
+	       text-decoration: none;
+	       text-transform: uppercase;
+	       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+	       margin: 6px;
+	       transition: ease 0.5s all;
+	   }
+
+	   .footer-btn:hover {
+	       color: #092a5e !important;
+	       background: #fff;
+	       border: 1px solid #092a5e;
+	       transition: ease 0.5s all;
+	   }
+
+	   h4 {
+	       margin-top: 40px;
+	   }
+
+	   @media screen and (max-width: 831px) {
+	       .col-6 {
+	           flex: 100%;
+	           max-width: 100%;
+	       }
+
+	       .search-tour {
+	           font-size: 2em;
+	           line-height: 1em;
+	       }
+
+	       header .logo-row img {
+	           max-height: 40pt;
+	       }
+
+	       header .header-head-conten h1.title {
+	           font-size: 1.2em;
+	       }
+
+	       header .header-head-conten {
+	           margin-top: 0;
+	       }
+	   }
+
+	   /*################################################ End Timer ######################################################################################*/
+	</style>
+</head>
+<body>
+	<div class="btn-top arrow_up"><img alt="arrow-up" src="https://www.tui.ua/getmedia/070374c3-73e4-40f2-8fe4-b41c5fbaa241/icon-arrow-up_2"></div>
+	<header id="go-up">
+		<div class="container">
+			<div class="row justify-content-between align-items-end logo-row">
+				<div class="tui-logo col-xs-auto">
+					<a href="https://agent.tui.ua/" target="_blank"><img alt="TUI" src="https://www.tui.ua/getmedia/89dd4f3a-ed12-47b1-bd0e-1d2d02d528d2/tui-logo"></a>
+				</div>
+			</div>
+			<div class="row header-head-conten">
+				<div class="col-sm-12 back-wh blu-font">
+					<h1 class="title">Манящие пески Туниса: от широких пляжей до чарующей Сахары</h1>
+					<p class="text">Предложите своим туристам микс из прекрасного пляжного отдыха, богатой экскурсионной программы и массы активностей - от гольфа до покорения барханов Сахары! &laquo;Карфаген должен быть разрушен&raquo;, но руины могущественной столицы финикийской империи можно увидеть и сейчас. Если клиент в смятении спросит, на что похож Тунис, то смело можно сказать - это смесь Турции и Европы. Но со своим неповторимым колоритом.</p>
+					<div class="countdown" onclick="window.open('https://agent.tui.ua/Information-page/Finland-discount-every-day/');" style="display: none;">
+						<div style="border: dotted 2px #ffffff; border-style: dashed; background: red;">
+							<div class="timer">
+								<div id="clock">
+									&nbsp;
+								</div>
+								<div class="discount-b">
+									<span class="title-discount">Скидка</span> <span class="title-discount">EURO</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					&nbsp;
+				</div>
+				<div class="col-sm-12 go-down-wrapper">
+					<div class="go-down">
+						&nbsp;
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="header-min-price-wrapper" style="display: none;">
+					<div class="header-min-rice">
+						&nbsp;
+						<div class="buttonBlock">
+							<p><a href="https://agent.tui.ua/Actions/2019/Finland/finland-start-2019" style="text-decoration: none; color: white;" target="_blank"><span class="search-tour"><strong><span style="font-size: 1.5em;">+3%</span><br>
+							на все</strong></span></a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main id="go">
+		<section class="seven-reasons">
+			<div class="container">
+				<div class="row justify-content-center">
+					<h3 class="title text-font text-centre"><strong>Тунис: аргументы ЗА</strong></h3>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<ul class="ul-squre">
+							<li>
+								<p>Разнообразная экскурсионная программа</p>
+							</li>
+							<li>
+								<p>Комфортный климат</p>
+							</li>
+							<li>
+								<p>Неутомительный перелет, менее 5 часов</p>
+							</li>
+							<li>
+								<p>Прекрасные пляжи с мягким песком</p>
+							</li>
+							<li>
+								<p>Всемирно известные центры талассотерапии</p>
+							</li>
+							<li>
+								<p>Разнообразная экскурсионная программа</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<h3 class="title text-font text-centre"><strong>Почему с TUI?</strong></h3>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<ul class="ul-squre">
+							<li>
+								<p>Пакетные туры с авиаперелетом на чартере из Киева в Энфиду</p>
+							</li>
+							<li>
+								<p>Номера на моментальном подтверждении</p>
+							</li>
+							<li>
+								<p>Собственные отели международного туроператора TUI</p>
+							</li>
+							<li>
+								<p>Конкурентные цены на направлении</p>
+							</li>
+							<li>
+								<p>Регулярные акции для агентов</p>
+							</li>
+							<li>
+								<p>Опытная принимающая команда гидов</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="comment-wrapp_bottom">
+			<div class="container" style="wid">
+				<div class="row">
+					<div class="col-12 col-sm-12 col-md-12 col-lg-8">
+						<div class="comment">
+							<p style="font-weight: bold;">Полетная программа TUI в Тунис в сезоне Лето 2020</p>
+							<p>TUI в летнем сезоне предлагает туры в Тунис на базе чартерных рейсов с вылетом из Киева.</p>
+						</div>
+					</div>
+					<div class="col-12 col-sm-12 col-md-12 col-lg-4">
+						&nbsp;
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--<section id="fly__text">
+			<div class="container">
+				 <div class="row">
+                                <h3 class="title text-font text-centre"><strong>Москва (Домодедово) - Ираклион</strong>
+                                </h3>
+                        </div>
+				<div class="row">
+					<div class="fly_tab">
+						<div class="boxes colored_box">
+							<p>Аэропорт вылета</p>
+						</div>
+						<div class="boxes colored_box">
+							<p>Город прилета</p>
+						</div>
+						<div class="boxes colored_box">
+							<p>Авиакомпания</p>
+						</div>
+						<div class="boxes colored_box">
+							<p>Номер рейса</p>
+						</div>
+						<div class="boxes colored_box">
+							<p>Полетная программа</p>
+						</div>
+						<div class="boxes colored_box">
+							<p>Периодичность</p>
+						</div>
+						<div class="boxes">
+							<p>Домодедово</p>
+						</div>
+						<div class="boxes">
+							<p>Энфида</p>
+						</div>
+						<div class="boxes">
+							<p>Ural Airlines</p>
+						</div>
+						<div class="boxes">
+							<p>U6 3597/3598</p>
+						</div>
+						<div class="boxes">
+							<p>25.04.2020 - 20.05.2020,<br>
+							09.10.2020 - 01.11.2020</p>
+						</div>
+						<div class="boxes">
+							<p>3, 5, 6, 7</p>
+						</div>
+						<div class="boxes">
+							<p>Внуково</p>
+						</div>
+						<div class="boxes">
+							<p>Энфида</p>
+						</div>
+						<div class="boxes">
+							<p>Azur Air</p>
+						</div>
+						<div class="boxes">
+							<p>ZF 7707/7708</p>
+						</div>
+						<div class="boxes">
+							<p>21.05.2020 - 07.10.2020</p>
+						</div>
+						<div class="boxes">
+							<p>ежедневно</p>
+						</div>
+						<div class="boxes">
+							<p>Домодедово</p>
+						</div>
+						<div class="boxes">
+							<p>о. Джерба</p>
+						</div>
+						<div class="boxes">
+							<p>Ural Airlines</p>
+						</div>
+						<div class="boxes">
+							<p>U6 3541/3542</p>
+						</div>
+						<div class="boxes">
+							<p>29.04.2020 - 25.10.2020</p>
+						</div>
+						<div class="boxes">
+							<p>4,7</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="blue__but">
+						<a class="blue__but-link bounce-to-right" href="https://b2b.tui.ru/search_tour?TOWNFROMINC=274286&amp;STATEINC=18464&amp;TOURINC=7356&amp;CHECKIN_BEG=20200425&amp;NIGHTS_FROM=7&amp;CHECKIN_END=20201028&amp;NIGHTS_TILL=21&amp;ADULT=2&amp;CURRENCY=1&amp;CHILD=0&amp;TOWNS_ANY=1&amp;STARS_ANY=1&amp;HOTELS_ANY=1&amp;MEALS_ANY=1&amp;FREIGHT=1&amp;FILTER=1&amp;PRICEPAGE=1&amp;DOLOAD=1" target="_blank">Смотреть туры</a>
+					</div>
+				</div>
+			</div>
+		</section>-->
+		<section class="best-offer">
+			<div class="container">
+				<div class="row justify-content-center">
+					<h3 class="title text-font text-centre"><strong>Отельная база TUI на летний период</strong></h3>
+					<p>TUI предлагает для отдыха в летнем сезоне широкую отельную базу с развитой инфраструктурой. В основном в Тунисе работают отели категорий 4*- 5* с хорошим уровнем сервиса.</p>
+				</div><!-- <div class="row colspace">
+                <ul class="ul-squre colspace_ul" id="menu">
+                    <li><a href="#children" target="_blank">Отдых с детьми</a></li>
+                    <li><a href="#youth" target="_blank">Отдых для молодежи</a></li>
+                    <li><a href="#romantic" target="_blank">Романтический отдых</a></li>
+                    <li><a href="#only-adults" target="_blank">Only adults</a></li>
+                    <li><a href="#relax" target="_blank">Спокойный тихий отдых</a></li>
+                    <li><a href="#animal2" target="_blank">Можно с животными</a></li>
+                </ul>
+            </div> -->
+				<div class="line">
+					<h3 class="title text-font text-centre" id="recomend"><strong>TUI Рекомендует</strong></h3>
+				</div>
+				<div class="line">
+					<div class="img_head ClubTropicana countries">
+						<div class="line_tittle">
+							Club Tropicana 3*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="/Tours/Africa/Tunisia/Monastir/Monastir/club-tropicana">Club Tropicana 3*</a></strong><br>
+							<br>
+							Семейный отель, расположенный на берегу моря, имеет собственный песчаный пляж. В распоряжении гостей открытый бассейн, широкий выбор спортивных развлечений, SPA-центр, а также живая музыка и дискотека по вечерам. Кроме того, здесь есть все условия для пребывания гостей с детьми: детский клуб, анимация, бассейн, детская площадка, меню, а также стулья в ресторане.<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head AquaterraBahiaBeach countries">
+						<div class="line_tittle">
+							Aquaterra Bahia Beach 4*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="/Tours/Africa/Tunisia/Hammamet/Hammamet/aquaterra-bahia-beach">Aquaterra Bahia Beach 4*</a></strong><br>
+							<br>
+							Светлый, красиво оформленный отель с открытым бассейном расположен всего в 200 м от песчаного пляжа. К услугам гостей комфортное размещение, вкусное и разнообразное питание по системе &quot;Все Включено&quot; и ресторан A la Carte. В отеле представлен большой выбор спортивных развлечений и анимация. Созданы необходимые условия условия для детей: открытый бассейн, детский клуб, анимация, мини-диско и игровая площадка.<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head DelphinElHabib countries">
+						<div class="line_tittle">
+							Delphin El Habib 4*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="/Tours/Africa/Tunisia/Monastir/Monastir/delphin-el-habib">Delphin El Habib 4*</a></strong><br>
+							<br>
+							Прекрасный курортный отель, расположенный на берегу моря, подойдет для отдыха любой категории туристов. Здесь есть открытые бассейны для взрослых и детей, а также мини-клуб, детская площадка и мини-дискотека для юных путешественников. Живая музыка и СПА-центр - для пар. Активная анимация, спортивные развлечения и ночной клуб - для молодежи. В отеле действуют концепция &ldquo;Все включено&rdquo;, 2 ресторана A la carte и 5 баров.<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head HotelNeptunia countries">
+						<div class="line_tittle">
+							Hotel Neptunia 3*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li>
+								<strong><a href="/Tours/Africa/Tunisia/Monastir/Skanes/hotel-neptunia">Hotel Neptunia 3*</a></strong><br>
+								<br>
+								Комфортабельный отель, расположенный на первой береговой линии, предлагает своим гостям размещение в уютных и хорошо оборудованных номерах с балконами. На территории функционируют ресторан, 4 бара, кафе, а также открытые бассейны для взрослых и детей и 4 водные горки. Досуг гостей организуют профессиональные аниматоры, кроме того имеется широкий выбор спортивных развлечений.<br>
+								<br>
+								<br>
+								<strong style="color: #dd7e6b;">Альтернатива отелю:</strong> <a href="/Tours/Africa/Tunisia/Hammamet/Hammamet/samira-club" target="_blank">Samira Club 3*</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head LeRoyalHammamet countries">
+						<div class="line_tittle">
+							Le Royal Hammamet 5*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="/Tours/Africa/Tunisia/Hammamet/Hammamet/le-royal-hammamet">Le Royal Hammamet 5*</a></strong><br>
+							<br>
+							Благодаря оформлению отеля гости почувствуют восточный колорит, а персонал обеспечит им высокий уровень сервиса. Отель расположен на первой береговой линии, располагает собственным песчаным пляжем, а также 3 открытыми бассейнами, SPA-центром и джакузи. Есть детский клуб, анимация, игровая площадка и детский открытый бассейн.<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head LtiBellevuePark countries">
+						<div class="line_tittle">
+							Lti Bellevue Park 5*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li>
+								<strong><a href="/Tours/Africa/Tunisia/Sousse/Port-El-Kantaoui/lti-bellevue-park">Lti Bellevue Park 5*</a></strong><br>
+								<br>
+								Современный отель, расположенный на берегу моря, предлагает комфортабельный номера. К услугам гостей частный пляж, несколько бассейнов, SPA-центр и салон красоты. Для маленьких постояльцев работает детский клуб, игровая площадка и веселая команда аниматоров.<br>
+								<br>
+								<strong style="color: #dd7e6b;">Альтернатива отелю:</strong> <a href="/Tours/Africa/Tunisia/Sousse/Sousse/movenpick-resort-marine-spa-sousse" target="_blank">Movenpick Resort &amp; Marine Spa Sousse 5*</a><br>
+								&nbsp;
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head MarhabaPalace countries">
+						<div class="line_tittle">
+							Marhaba Palace 5*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="/Tours/Africa/Tunisia/Sousse/Port-El-Kantaoui/marhaba-palace">Marhaba Palace 5*</a></strong><br>
+							<br>
+							Этот курортный отель расположен на берегу моря и предлагает своим гостям широкий спектр услуг, среди которых: бассейны, тренажерный зал, поля для мини-футбола и мини-гольфа, теннисный корт, детский клуб и детская площадка, SPA-салон и диско-бар. Подойдет для отдыха всех категорий туристов.<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head MarhabaSalem countries">
+						<div class="line_tittle">
+							Marhaba Salem 4*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li>
+								<strong><a href="/Tours/Africa/Tunisia/Sousse/Sousse/marhaba-salem">Marhaba Salem 4*</a></strong><br>
+								<br>
+								Отель имеет собственный песчаный пляж, который находится в 50 м от отеля. Для гостей работают команда аниматоров, ресторан a la carte, 5 баров. На территории имеются открытые бассейны для взрослых и детей, SPA-центр, водные горки. По вечерам можно насладиться живой музыкой и потанцевать на дискотеке. <strong style="color: #dd7e6b;">Альтернатива отелю:</strong> <a href="/Tours/Africa/Tunisia/Sousse/Sousse/thalassa-sousse-resort-aquapark" target="_blank">Thalassa Sousse Resort &amp; Aquapark 4*</a><br>
+								&nbsp;
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head MedinaBelisaireThalasso countries">
+						<div class="line_tittle">
+							Medina Belisaire &amp; Thalasso 4*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li>
+								<strong><a href="/Tours/Africa/Tunisia/Hammamet/Yasmine-Hammamet/medina-belisaire-thalasso">Medina Belisaire &amp; Thalasso 4*</a></strong><br>
+								<br>
+								Современный отель идеально подойдет как для бизнес-путешествия, так и для семейного отдыха. На территории есть 4 конференц-зала, 2 открытых и крытых бассейна, детский клуб и игровая площадка. Ресторан отеля работает по концепции &ldquo;Все включено&rdquo;, также есть отдельное меню для детей.<br>
+								<br>
+								<strong style="color: #dd7e6b;">Альтернатива отелю:</strong> <a href="/Tours/Africa/Tunisia/Hammamet/Yasmine-Hammamet/medina-diar-lemdina" target="_blank">Medina Diar Lemdina 4*</a><br>
+								&nbsp;
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head MedinaDiarLemdina countries">
+						<div class="line_tittle">
+							Medina Diar Lemdina 4*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="/Tours/Africa/Tunisia/Hammamet/Yasmine-Hammamet/medina-diar-lemdina">Medina Diar Lemdina 4*</a></strong><br>
+							<br>
+							Размещение в этом отеле можно сравнить с проживанием в Средневековом замке - настолько он красивый и колоритный. К услугам гостей открытый и крытый бассейны, 2 ресторана, 2 бара, частный пляж и интересные развлечения. Для малышей работает мини-клуб.<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head MedinaSolariaThalasso countries">
+						<div class="line_tittle">
+							Medina Solaria &amp; Thalasso 5*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="/Tours/Africa/Tunisia/Hammamet/Yasmine-Hammamet/medina-solaria-thalasso">Medina Solaria &amp; Thalasso 5*</a></strong><br>
+							<br>
+							Данный отель расположен в шаговой доступности от песчаного пляжа. На территории отеля есть конференц-зал, ресторан A la Carte и SPA-центр, тренажерный зал и иные спортивные развлечения. Для малышей работает детский клуб. Кроме того, гости отеля имеют неограниченный доступ в аквапарк &quot;Aqua Land&quot;, а также возможность бесплатно поужинать в трёх ресторанах a la carte следующих отелей: Diar Lemdina, Medina Belissaire Thalasso, Medina Solaria Thalassa &amp; SPA (всего 3 ужина за весь период пребывания, по предварительной записи).<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head NeroliaSpaMonastir countries">
+						<div class="line_tittle">
+							Nerolia &amp; Spa Monastir 4*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="/Tours/Africa/Tunisia/Monastir/Monastir/nerolia-spa-monastir">Nerolia &amp; Spa Monastir 4*</a></strong><br>
+							<br>
+							Комфортабельный отель, расположенный в 300 м от пляжа, предлагает широкий выбор развлечений для гостей любого возраста. На территории работает Wi-FI, есть 2 ресторана A la Carte и 5 баров.<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head OccidentalSousseMarhaba countries">
+						<div class="line_tittle">
+							Occidental Sousse Marhaba 4*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="#">Occidental Sousse Marhaba 4*</a></strong><br>
+							<br>
+							Современный отель обеспечит своим гостям комфортное размещение и незабываемые впечатления от отпуска. На территории есть 5 бассейнов, 2 ресторана A la Carte, несколько баров. Программа All Inclusive включает в себя широкий выбор блюд. Для маленьких постояльцев работают открытый бассейн, детский клуб, детская площадка, анимация, мини-дискотека.<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head Soviva countries">
+						<div class="line_tittle">
+							Palmyra Aqua Kantaoui (ex. Soviva) 3*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="/Tours/Africa/Tunisia/Sousse/Sousse/palmyra-aqua-kantaoui-(ex-soviva)">Palmyra Aqua Kantaoui (ex. Soviva) 3*</a></strong><br>
+							<br>
+							Комфортабельный отель, расположенный через дорогу от пляжа. К услугам гостей разнообразное питание по системе &quot;Все включено&quot;, большой выбор бесплатных спортивных развлечений, бесплатный Wi-Fi, SPA-центр с джакузи, ресторан и несколько баров. Для детей работает мини-клуб, анимация, проводится мини-диско, а в ресторане имеется детское меню.<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head PalmyraBeachHotel countries">
+						<div class="line_tittle">
+							Palmyra Beach Hotel 3*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="/Tours/Africa/Tunisia/Sousse/Sousse/palmyra-beach-hotel">Palmyra Beach Hotel 3*</a></strong><br>
+							<br>
+							Комфортабельный отель, расположенный на первой береговой линии. К услугам гостей разнообразное питание по системе &quot;Все включено&quot;, бесплатный Wi-Fi, SPA-центр с джакузи, ресторан и несколько баров. Для малышей работает мини-клуб.<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head PalmyraClubNeabul countries">
+						<div class="line_tittle">
+							Palmyra Club Neabul 3*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="/Tours/Africa/Tunisia/Nabul/Nabul/palmyra-club-neabul">Palmyra Club Neabul 3*</a></strong><br>
+							<br>
+							Небольшой уютный отель расположен на первой береговой линии. Подходит для семейного отдыха: есть детский клуб, игровая площадка, анимация и мини-дискотека, а для взрослых большой выбор спортивных развлечений. Над открытым бассейном протянут деревянный мостик, чтобы гости смогли пройти в бар и насладиться прохладительными напитками.<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head GoldenBeachHotel countries">
+						<div class="line_tittle">
+							Palmyra Golden Beach Hotel 3*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="/Tours/Africa/Tunisia/Sousse/Sousse/palmyra-golden-beach-hotel">Palmyra Golden Beach Hotel 3*</a></strong><br>
+							<br>
+							К услугам гостей данного отеля представлены открытые бассейны и 3 водные горки для взрослых и детей, SPA-центр, анимация, питание по концепции &ldquo;Все включено&rdquo;, а также спортивные развлечения: теннис, пляжный футбол и пляжный волейбол, водное поло, мини-футбол и др.<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head PrimasolElMehdi countries">
+						<div class="line_tittle">
+							Primasol El Mehdi 4*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="/Tours/Africa/Tunisia/Mahdia/Mahdia/primasol-el-mehdi">Primasol El Mehdi 4*</a></strong><br>
+							<br>
+							Отель, расположенный на берегу моря, предоставляет питание по концепции Ultra All Inclusive. К услугам постояльцев несколько шикарных бассейнов для взрослых и детей, 3 водные горки, 6 ресторанов и 6 баров. Отель предоставляет все условия для приятного отдыха.<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head RoyalThalassa countries">
+						<div class="line_tittle">
+							Royal Thalassa 5*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="/Tours/Africa/Tunisia/Monastir/Monastir/royal-thalassa">Royal Thalassa 5*</a></strong><br>
+							<br>
+							Отель Royal Thalassa &ndash; прекрасный выбор для семейного отдыха. На территории есть несколько бассейнов, детский клуб, Thalasso-центр, 3 ресторана, в одном из которых предусмотрительно составлено меню для малышей. Широкий выбор спортивных развлечений.<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head ThalassaMahdiaAquapark countries">
+						<div class="line_tittle">
+							Thalassa Mahdia Aquapark 4*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="/Tours/Africa/Tunisia/Mahdia/Mahdia/thalassa-mahdia-aquapark">Thalassa Mahdia Aquapark 4*</a></strong><br>
+							<br>
+							Прекрасный вариант для отдыха с семьей, друзьями или второй половинкой. Для гостей работают 2 ресторана A la Carte, 3 бара и кафе. В одном из открытых бассейнов есть водные горки. Маленькие гости могут посетить занятия в мини-клубе или игровую площадку.<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div><!--
+    
+<div class="line">
+<div class="img_head splashworld countries">
+<div class="line_tittle">SplashWorld Venus Beach 3*</div>
+
+<div class="down-animatiom">
+<div class="chevron">&nbsp;</div>
+
+<div class="chevron">&nbsp;</div>
+
+<div class="chevron">&nbsp;</div>
+</div>
+</div>
+
+<div class="bonus">
+<ul class="squre">
+    <li><strong><a href="#">SplashWorld Venus Beach 3*</a></strong><br />
+    <br />
+    Отель расположен на берегу собственного песчаного пляжа, в окружении пышных садов. К услугам гостей отдых по системе &ldquo;все включено&rdquo;, разнообразное питание и масса расслабляющих и развлекательных мероприятий. Идеальное место для пар и семей с детьми. Для юных путешественников работает мини-клуб, детские бассейн и площадка. Отсутствие разнообразной анимации компенсирует обширная экскурсионная программа.<br />
+    <br />
+    <strong style="color: #dd7e6b;">Альтернатива отелю:</strong> <a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Hammamet/samira-club">Samira Club 3*,</a> <a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Hammamet/sentido-phenicia">Sentido Phenicia 4*</a> &nbsp;</li>
+</ul>
+</div>
+</div>--><!--
+<div class="line">
+<div class="img_head helya-beach countries">
+<div class="line_tittle">Helya Beach &amp; Spa 3*</div>
+
+<div class="down-animatiom">
+<div class="chevron">&nbsp;</div>
+
+<div class="chevron">&nbsp;</div>
+
+<div class="chevron">&nbsp;</div>
+</div>
+</div>
+
+<div class="bonus">
+<ul class="squre">
+    <li><strong><a href="https://agent.tui.ua/Tours/Africa/Tunisia/Monastir/Skanes/helya-beach-spa" target="_blanck">Helya Beach &amp; Spa 3* </a></strong><br />
+    <br />
+    Современный отель с собственным песчаным пляжем и спа-центром Thalasso-Biocure расположен на берегу моря, в 12 км от центра Сусса, в 63 км от аэропорта Энфиды. Гостей ждет размещение в комфортабельных номерах, вкусное питание по системе All Inclusive и веселая анимация. За досуг детей отвечает команда профессиональных аниматоров, есть детский клуб. Доступен собственный песчаный пляж, фитнес-центр и 4 бассейна в том числе для детей.<br />
+    <br />
+    <strong style="color: #dd7e6b;">Альтернатива отелю:</strong> <a href="https://agent.tui.ua/Tours/Africa/Tunisia/Monastir/Skanes/tui-magic-life-skanes?City=Nizhn&amp;t=hotel#/tabs">TUI MAGIC LIFE Skanes 4*,</a> <a href="https://agent.tui.ua/Tours/Africa/Tunisia/Monastir/Skanes/sahara-beach">Sahara Beach 3*</a> &nbsp;</li>
+</ul>
+</div>
+</div>-->
+				<div class="line">
+					<div class="img_head africana countries">
+						<div class="line_tittle">
+							TUI MAGIC LIFE Africana 5*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Yasmine-Hammamet/TUI-MAGIC-LIFE-Africana" target="_blanck">TUI MAGIC LIFE Africana 5*</a></strong><br>
+							<br>
+							Отель удобно расположен: на первой береговой линии, в 4 км от туристического центра Ясмин-Хаммамет, в 45 км от аэропорта Энфиды. Идеальный вариант для тех, кто хочет комфортно отдохнуть в экзотической обстановке. Гостям будет предложен широкий выбор спортивных и развлекательных программ, а также услуги СПА-центра и анимация. Созданы необходимые условия для детей, в том числе специальное меню. Отель подойдет как для семейного отдыха, так и для молодежи. На территории есть 5 открытых бассейнов (2 детских), 3 водные горки, детский клуб. Питание предоставляется по системе &ldquo;Все включено&rdquo;, можно выбрать диетическое меню. Персонал говорит по-русски.<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head skanes countries">
+						<div class="line_tittle">
+							TUI MAGIC LIFE Skanes 4*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li>
+								<strong><a href="https://agent.tui.ua/Tours/Africa/Tunisia/Monastir/Skanes/tui-magic-life-skanes?City=Nizhn&amp;t=hotel#/tabs" target="_blanck">TUI MAGIC LIFE Skanes 4*</a></strong><br>
+								<br>
+								Курортный отель с собственным мини-аквапарком с водными горками для взрослых и детей расположен на первой береговой линии. На территории работают несколько открытых бассейнов, бары, рестораны и SPA-центр. Для маленьких гостей разных возрастов открыт детский клуб. Эксперты TUI отмечают, что объект размещения предлагает хорошее соотношение цена-качество и широкий выбор спортивных развлечений.<br>
+								<br>
+								<strong style="color: #dd7e6b;">Альтернатива отелю:</strong> <a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Yasmine-Hammamet/TUI-MAGIC-LIFE-Africana">TUI MAGIC LIFE Africana 5*</a><br>
+								&nbsp;
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head scheherazade countries">
+						<div class="line_tittle">
+							Tui Blue Scheherazade 4*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="/Tours/Africa/Tunisia/Sousse/Sousse/TUI-SENSIMAR-Scheherazade" target="_blanck">Tui Blue Scheherazade 4*</a></strong><br>
+							<br>
+							Современный отель удобно расположен всего в нескольких минутах ходьбы от пляжа, близко к аэропорту и к центру г. Сусс. Подходит для романтического молодежного отдыха, ориентирован только на взрослых. Вокруг отеля хорошо развита туристическая инфраструктура с разнообразными развлечениями. К услугам гостей 2 открытых бассейна, SPA-центр и спортивные развлечения. Во время ужина действует дресс-код: согласно правилам отеля, гости в шортах на ужин не допускаются.<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div><!--
+<div class="line">
+<div class="img_head oceana-resort countries">
+<div class="line_tittle">TUI SENSIMAR Oceana Resort &amp; Spa 5*</div>
+
+<div class="down-animatiom">
+<div class="chevron">&nbsp;</div>
+
+<div class="chevron">&nbsp;</div>
+
+<div class="chevron">&nbsp;</div>
+</div>
+</div>
+
+<div class="bonus">
+<ul class="squre">
+    <li><strong><a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Hammamet/TUI-SENSIMAR-Oceana-Resort-Spa" target="_blanck">TUI SENSIMAR Oceana Resort &amp; Spa 5*</a></strong><br />
+    <br />
+    Прекрасный курортный отель расположен на берегу моря, в 6 км от центра Хаммамета, в 50 км от аэропорта Энфиды, ориентированный на отдых взрослых гостей. На территории открыты рестораны A la carte, SPA-центр, 2 открытых бассейна и один крытый. Активная анимация отсутствует, отель отлично подходит для спокойного расслабляющего отдыха.<br />
+    <br />
+    <strong style="color: #dd7e6b;">Альтернатива отелю:</strong> <a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Yasmine-Hammamet/TUI-MAGIC-LIFE-Africana">TUI MAGIC LIFE Africana 5*</a><br />
+    &nbsp;</li>
+</ul>
+</div>
+</div>-->
+				<div class="line">
+					<div class="img_head samira-club countries">
+						<div class="line_tittle">
+							Samira Club 3*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Hammamet/samira-club" target="_blanck">Samira Club 3*</a></strong><br>
+							<br>
+							Уютный отель для тихого, уединенного отдыха. Расположен на первой береговой линии, в 4 км от центра Ясмин-Хаммамета, 40 км от аэропорта Энфиды. Незабываемо провести отпуск вашим клиентам помогут: приветливый персонал, 2 открытых и крытый бассейны с водными горками, 3 ресторана A la Carte, 5 баров. Также на территории есть тренажерный зал и SPA-центр. Вкусная кухня, широкая развлекательная и спортивная программы обеспечат комфортный и интересный отдых туристам. Для юных гостей работает детский клуб, бассейн, разработано специальное меню и анимация.<br>
+							<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div><!--
+<div class="line">
+<div class="img_head holiday-village countries">
+<div class="line_tittle">Holiday Village Manar 4*</div>
+
+<div class="down-animatiom">
+<div class="chevron">&nbsp;</div>
+
+<div class="chevron">&nbsp;</div>
+
+<div class="chevron">&nbsp;</div>
+</div>
+</div>
+
+<div class="bonus">
+<ul class="squre">
+    <li><strong><a href="#">Holiday Village Manar 4*</a></strong><br />
+    <br />
+    Отель состоит из многоэтажных корпусов и большой благоустроенной территории-сада, расположен на большом песчаном пляже, в 7 км от Хаммамета, в 65 км от аэропорта. Гости размещаются в комфортабельных номерах различных категорий, к их услугам большой выбор водных и иных спортивных развлечений. Есть детские бассейн, игровая площадка и мини-клуб.<br />
+    <br />
+    &nbsp;</li>
+</ul>
+</div>
+</div>--><!--
+<div class="line">
+<div class="img_head magic-hotels countries">
+<div class="line_tittle">Magic Hotels Royal Kenz 4*</div>
+
+<div class="down-animatiom">
+<div class="chevron">&nbsp;</div>
+
+<div class="chevron">&nbsp;</div>
+
+<div class="chevron">&nbsp;</div>
+</div>
+</div>
+
+<div class="bonus">
+<ul class="squre">
+    <li><strong><a href="#" target="_blanck">Magic Hotels Royal Kenz 4*</a></strong><br />
+    <br />
+    Отель расположен в 13 км от центра г. Сусс, в 3 км от Порт-Эль-Кантауи. Отличный выбор для семейного отдыха, романтических поездок и для путешествий с друзьями. Эксперты TUI отмечают оптимальное соотношение цена-качество. Гостей ждет хорошая анимация, спортивные развлечения. Открыты бассейны в том числе для детей. Отель находится на второй береговой линии, до пляжа порядка 450 метров, что позволяет ежедневно совершать неутомительную прогулку, наслаждаясь местными видами.<br />
+    <br />
+    <strong style="color: #dd7e6b;">Альтернатива отелю:</strong> <a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Hammamet/delfino-beach-resort">Delfino Beach &amp; Resort 4*,</a> <a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Hammamet/sentido-phenicia">Sentido Phenicia 4*</a><br />
+    &nbsp;</li>
+</ul>
+</div>
+</div>--><!--
+<div class="line">
+<div class="img_head marmara-palm countries">
+<div class="line_tittle">Club Marmara Palm Beach Hammamet 4*</div>
+
+<div class="down-animatiom">
+<div class="chevron">&nbsp;</div>
+
+<div class="chevron">&nbsp;</div>
+
+<div class="chevron">&nbsp;</div>
+</div>
+</div>
+
+<div class="bonus">
+<ul class="squre">
+    <li><strong><a href="#">Club Marmara Palm Beach Hammamet 4* </a></strong><br />
+    <br />
+    Отель расположен на берегу моря, среди садов с пальмами, подходит для отдыха любой категории туристов. Гости могут заняться спортом и насладиться дневными и вечерними развлекательными программами. На территории расположен открытый бассейн, по запросу доступны детские кроватки и стулья в ресторане. Аэропорт находится в 45 км от отеля, можно воспользоваться индивидуальным трансфером, чтобы быстрее и с большим комфортом доехать до Club Marmara Palm Beach Hammamet 4*.<br />
+    <br />
+    <strong style="color: #dd7e6b;">Альтернатива отелю:</strong> Magic Hotels Royal Kenz 4*, <a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Hammamet/delfino-beach-resort">Delfino Beach &amp; Resort 4*</a><br />
+    &nbsp;</li>
+</ul>
+</div>
+</div>-->
+				<div class="line">
+					<div class="img_head movenpick countries">
+						<div class="line_tittle">
+							Movenpick Resort &amp; Marine Spa Sousse 5*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li>
+								<strong><a href="https://agent.tui.ua/Tours/Africa/Tunisia/Sousse/Sousse/movenpick-resort-marine-spa-sousse" target="_blanck">Movenpick Resort &amp; Marine Spa Sousse 5*</a></strong><br>
+								<br>
+								Роскошный отель с красивым современным дизайном удобно расположен на первой береговой линии, протяженность песчаного пляжа составляет 300 м, в 3 км от центра г. Сусс, в 17 км от аэропорта Монастир. Питание предоставляется по системам &quot;Полупансион&quot; и All Inclusive. На территории есть 2 открытых бассейна с морской водой, SPA-центр, тренажерный зал, спортивные развлечения, 4 ресторана A la carte, конференц-залы. Созданы условия для отдыха юных путешественников (открытый бассейн, клуб, специальное меню, анимация, дискотека).<br>
+								<br>
+								<strong style="color: #dd7e6b;">Альтернатива отелю:</strong> <a href="https://agent.tui.ua/Tours/Africa/Tunisia/Sousse/Sousse/jaz-tour-khalef">Jaz Tour Khalef 5*,</a> <a href="https://agent.tui.ua/Tours/Africa/Tunisia/Sousse/Sousse/TUI-SENSIMAR-Scheherazade">TUI SENSIMAR Scheherazade 4*</a><br>
+								&nbsp;
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head khalef countries">
+						<div class="line_tittle">
+							Jaz Tour Khalef 5*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="#" target="_blanck">Jaz Tour Khalef 5*</a></strong><br>
+							<br>
+							Отель находится в 100 м от пляжа и в 2,5 км от центра города Сусс - городе, знаменитом своими прекрасными пейзажами, парками, пляжами и историческими памятками. Отель ежегодно принимает гостей со всего мира, гарантируя каждому постояльцу безупречное обслуживание и комфортное пребывание. На территории 2 открытых бассейна, крытый бассейн, 6 водных горок, Thalasso-центр, рестораны A la carte. Ежедневная анимация не даст вашим клиентам заскучать. Созданы условия для детей: бассейны, клуб, водные горки, площадка.<br>
+							<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head delfino countries">
+						<div class="line_tittle">
+							Delfino Beach &amp; Resort 4*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Hammamet/delfino-beach-resort" target="_blanck">Delfino Beach &amp; Resort 4*</a></strong><br>
+							<br>
+							Курортный отель с обширной территорией с бассейнами, садом и разнообразными развлечениями расположился прямо на берегу моря. Гостей ждут светлые комфортабельные номера, блюда местной и интернациональной кухни и веселая анимация.Созданы условия для детей: бассейн, детский клуб, площадка. На территории также есть 2 открытых бассейна и 1 крытый (16+), SPA-центр, тренажерный зал, в местном ночном клубе проходят дискотеки. Вежливый персонал относится к гостям с вниманием и заботой.<br>
+							<br>
+							<strong style="color: #dd7e6b;">Альтернатива отелю:</strong> Club Marmara Palm Beach Hammamet 4*<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head sentido countries">
+						<div class="line_tittle">
+							Sentido Phenicia 4*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li>
+								<strong><a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Hammamet/sentido-phenicia" target="_blanck">Sentido Phenicia 4*</a></strong><br>
+								<br>
+								Отель с аккуратной, ухоженной территорией и большим количеством пальм. Аэропорт находится в 45 км от отеля, можно воспользоваться индивидуальным трансфером, чтобы быстрее и с большим комфортом доехать до места отдыха. Открытый бассейн с красивым баром, 2 ресторана A la Carte, детский клуб и, конечно, SPA-центр не оставят ваших клиентов равнодушными.<br>
+								<br>
+								<strong style="color: #dd7e6b;">Альтернатива отелю:</strong> <a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Hammamet/delfino-beach-resort">Delfino Beach &amp; Resort 4*,</a> Holiday Village Manar 4*<br>
+								&nbsp;
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head sahara countries">
+						<div class="line_tittle">
+							Sahara Beach 3*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="https://agent.tui.ua/Tours/Europe/Greece/Crete/panormo/Iberostar-Creta-Marine-Hotel" target="_blanck">Sahara Beach 3*</a></strong><br>
+							<br>
+							Отель расположен на берегу моря, предлагает широкий выбор развлечений для любителей активного отдыха. На территории есть 3 открытых бассейна, крытый бассейн, водные горки SPA-центр. Питание предоставляется по системе All Inclusive, к услугам гостей A la carte ресторан, главный ресторан, бары (7 шт) и кафе. К услугам гостей тренажерный зал и иные спортивные развлечения (водное поло, баскетбол, теннисный корт и др). Продумана анимация для взрослых, в том числе живая музыка, можно отправиться в ночной клуб (вход платно). Созданы условия для комфортного отдыха детей: открытый и крытый бассейны, водные горки, детские клубы, площадка, анимация и т.д.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head borj countries">
+						<div class="line_tittle">
+							El Borj 3*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li>
+								<strong><a href="https://agent.tui.ua/Tours/Africa/Tunisia/mahdia/mahdia/el-borj" target="_blanck">El Borj 3*</a></strong><br>
+								<br>
+								Отель с открытыми и крытым бассейнами, собственным песчаным пляжем и множеством спортивных развлечений располагается на первой береговой линии. В 4 км от центра Махдии, в 54 км от аэропорта Монастир. Гости могут воспользоваться услугами SPA-центра, парикмахерской. Подойдет для отдыха любой категории туристов. Из спортивных развлечений доступны: аэробика, аква-аэробика, теннис, мини-гольф. К услугам юных гостей детский мини-клуб (4-12 лет) и детский бассейн.<br>
+								<br>
+								<strong style="color: #dd7e6b;">Альтернатива отелю:</strong> <a href="https://agent.tui.ua/Tours/Africa/Tunisia/Monastir/Skanes/sahara-beach">Sahara Beach 3*,</a> <a href="https://agent.tui.ua/Tours/Africa/Tunisia/Monastir/Skanes/helya-beach-spa">Helya Beach &amp; Spa 3*</a><br>
+								&nbsp;
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="line">
+					<div class="img_head thalassa countries">
+						<div class="line_tittle">
+							Thalassa Sousse Resort &amp; Aquapark 4*
+						</div>
+						<div class="down-animatiom">
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+							<div class="chevron">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+					<div class="bonus">
+						<ul class="squre">
+							<li><strong><a href="https://agent.tui.ua/Tours/Africa/Tunisia/Sousse/Sousse/thalassa-sousse-resort-aquapark" target="_blanck">Thalassa Sousse Resort &amp; Aquapark 4*</a></strong><br>
+							<br>
+							Отель с современным дизайном, красивой территорией и собственным мини-аквапарком. Расположен относительно близко к аэропорту (16 км), на территории обширного зеленого сада. Доступен широкий выбор спортивных развлечений (аэробика, аква-аэробика, пляжный волейбол, пляжный футбол, дартс, мини-футбол и др). Есть конференц-зал/ банкетный зал. Созданы условия для детей: анимация, аквапарк, бассейн, площадка, клуб, специальное меню.<br>
+							<br>
+							<br>
+							&nbsp;</li>
+						</ul>
+					</div>
+				</div><!-- <div class="line">
+                <div class="row">
+                    <p><b>Отели на о.Джерба </b></p>
+                    <br>
+                    <br>
+                    <p><a
+                            href="http://agent.tui.ru/Tours/Africa/Tunisia/Djerba/Djerba/sentido-djerba-beach?_ga=2.179201703.202232884.1579502513-1945865185.1579502513">Sentido
+                            Djerba Beach 4*</a></p><br>
+                    <p><a href="http://agent.tui.ru/Tours/Africa/Tunisia/Djerba/Djerba/fiesta-beach-djerba">Fiesta Beach
+                            Djerba 4*</a></p><br>
+                    <p><a href="http://agent.tui.ru/Tours/Africa/Tunisia/Djerba/Djerba/djerba-aqua-resort">Djerba Aqua
+                            Resort (Ex Sunconnect) 4*</a></p><br>
+                    <p><a
+                            href="http://agent.tui.ru/Tours/Africa/Tunisia/Djerba/Djerba/iberostar-mehari-djerba?_ga=2.150955957.202232884.1579502513-1945865185.1579502513">Iberostar
+                            Mehari Djerba 4*</a></p><br>
+                    <p><a href="http://agent.tui.ru/Tours/Africa/Tunisia/Djerba/Djerba/el-mouradi-djerba-menzel">El
+                            Mouradi
+                            Djerba Menzel 4*</a></p><br>
+                    <p><a href="http://agent.tui.ru/Tours/Africa/Tunisia/Djerba/Djerba/tui-sensimar-ulysse-thalasso">Tui
+                            Sensimar Ulysse Thalasso 5*</a></p><br>
+                    <p><a href="http://agent.tui.ru/Tours/Africa/Tunisia/Djerba/Djerba/dar-jerba-zahra">Dar Jerba Zahra
+                            3*</a></p>
+                    <br />
+                </div>
+            </div> -->
+				<!--<p><b>Отели на о.Джерба</b></p>
+				<ul class="ul-squre">
+					<li>
+						<a href="http://agent.tui.ru/Tours/Africa/Tunisia/Djerba/Djerba/sentido-djerba-beach?_ga=2.179201703.202232884.1579502513-1945865185.1579502513">Sentido Djerba Beach 4*</a>
+					</li>
+					<li>
+						<a href="http://agent.tui.ru/Tours/Africa/Tunisia/Djerba/Djerba/fiesta-beach-djerba">Fiesta Beach Djerba 4*</a>
+					</li>
+					<li>
+						<a href="http://agent.tui.ru/Tours/Africa/Tunisia/Djerba/Djerba/djerba-aqua-resort">Djerba Aqua Resort (Ex Sunconnect) 4*</a>
+					</li>
+					<li>
+						<a href="http://agent.tui.ru/Tours/Africa/Tunisia/Djerba/Djerba/iberostar-mehari-djerba?_ga=2.150955957.202232884.1579502513-1945865185.1579502513">Iberostar Mehari Djerba 4*</a>
+					</li>
+					<li>
+						<a href="http://agent.tui.ru/Tours/Africa/Tunisia/Djerba/Djerba/el-mouradi-djerba-menzel">El Mouradi Djerba Menzel 4*</a>
+					</li>
+					<li>
+						<a href="http://agent.tui.ru/Tours/Africa/Tunisia/Djerba/Djerba/tui-sensimar-ulysse-thalasso">Tui Sensimar Ulysse Thalasso 5*</a>
+					</li>
+					<li>
+						<a href="http://agent.tui.ru/Tours/Africa/Tunisia/Djerba/Djerba/dar-jerba-zahra">Dar Jerba Zahra 3*</a>
+					</li>
+				</ul>-->
+				<div class="row">
+					<p><b>Подборки отелей TUI</b></p>
+				</div>
+				<div class="line">
+					<div class="akcii-sroki-uslovia">
+						<div class="ActionPage-description__text butsl" id="children">
+							Отдых с детьми<span class="arrow_right">▼</span>
+						</div>
+						<div class="sliderList">
+							<p><span style="color: #dd7e6b;">Подсказка:</span> Во многих отелях Туниса работают мини-клубы для юных путешественников, в ресторанах есть детская кухня, а также необходимое оборудование для детей (детские бассейны, площадки и тд). Делимся своей подборкой.</p>
+							<ul class="ul-squre colspace_ul">
+								<li>
+									<a href="http://agent.tui.ru/Tours/Africa/Tunisia/Monastir/Monastir/club-tropicana">Club Tropicana 3*</a>
+								</li>
+								<li>
+									<a href="http://agent.tui.ru/Tours/Africa/Tunisia/Hammamet/Hammamet/aquaterra-bahia-beach">Aquaterra Bahia Beach 4*</a>
+								</li>
+								<li>
+									<a href="http://agent.tui.ru/Tours/Africa/Tunisia/Monastir/Monastir/nerolia-spa-monastir">Nerolia &amp; Spa Monastir 4*</a>&nbsp;
+								</li>
+								<li>
+									<a href="http://agent.tui.ru/Tours/Africa/Tunisia/Hammamet/Yasmine-Hammamet/medina-solaria-thalasso">Medina Solaria &amp; Thalasso 5*</a>
+								</li>
+								<li>
+									<a href="https://agent.tui.ua/Tours/Africa/Tunisia/Sousse/Sousse/thalassa-sousse-resort-aquapark">Thalassa Sousse Resort &amp; Aquapark 4*</a>
+								</li>
+								<li>
+									<a href="https://agent.tui.ua/Tours/Africa/Tunisia/Sousse/Sousse/movenpick-resort-marine-spa-sousse">Movenpick Resort &amp; Marine Spa Sousse 5*</a>
+								</li>
+								<li>
+									<a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Yasmine-Hammamet/TUI-MAGIC-LIFE-Africana">TUI MAGIC LIFE Africana 5*</a>
+								</li>
+								<li>
+									<a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Hammamet/samira-club">Samira Club 3*</a>
+								</li>
+								<li>
+									<a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Hammamet/delfino-beach-resort">Delfino Beach &amp; Resort 4*</a>
+								</li>
+								<li>
+									<a href="https://agent.tui.ua/Tours/Africa/Tunisia/Monastir/Skanes/tui-magic-life-skanes?City=Nizhn&amp;t=hotel#/tabs">TUI MAGIC LIFE Skanes 4*</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="line">
+					<div class="akcii-sroki-uslovia">
+						<div class="ActionPage-description__text butsl" id="youth">
+							Отдых для молодежи<span class="arrow_right">▼</span>
+						</div>
+						<div class="sliderList">
+							<p><span style="color: #dd7e6b;">Подсказка:</span> Многие отели предлагают широкий выбор спортивных и развлекательных программ. Обратите внимание на:</p>
+							<ul class="ul-squre colspace_ul">
+								<li>
+									<a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Yasmine-Hammamet/TUI-MAGIC-LIFE-Africana">TUI MAGIC LIFE Africana 5*</a>
+								</li>
+								<li>
+									<a href="https://agent.tui.ua/Tours/Africa/Tunisia/Monastir/Skanes/sahara-beach">Sahara Beach 3*</a>
+								</li>
+								<li>
+									<a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Hammamet/delfino-beach-resort">Delfino Beach &amp; Resort 4*</a>
+								</li>
+								<li>
+									<a href="https://agent.tui.ua/Tours/Africa/Tunisia/Monastir/Skanes/tui-magic-life-skanes?City=Nizhn&amp;t=hotel#/tabs">TUI MAGIC LIFE Skanes 4*</a>
+								</li>
+								<li>
+									<a href="https://agent.tui.ua/Tours/Africa/Tunisia/Hammamet/Hammamet/sentido-phenicia">Sentido Phenicia 4*</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="line">
+					<div class="akcii-sroki-uslovia">
+						<div class="ActionPage-description__text butsl" id="romantic">
+							Романтический отдых<span class="arrow_right">▼</span>
+						</div>
+						<div class="sliderList">
+							<p><span style="color: #dd7e6b;">Подсказка:</span> В Тунисе есть отели только для взрослых, позволяющие провести время в некотором уединении. Многие отели ориентированы на отдых пар, предлагают услуги центров талассотерапии и СПА, ресторанов A la carte и др. Приводим некоторые из них:</p>
+							<ul class="ul-squre colspace_ul">
+								<li>
+									<a href="https://agent.tui.ua/Tours/Africa/Tunisia/Sousse/Sousse/jaz-tour-khalef">Jaz Tour Khalef 5*</a>
+								</li>
+								<li>
+									<a href="https://agent.tui.ua/Tours/Africa/Tunisia/Sousse/Sousse/movenpick-resort-marine-spa-sousse">Movenpick Resort &amp; Marine Spa Sousse 5*</a>
+								</li>
+								<li>
+									<a href="https://agent.tui.ua/Tours/Africa/Tunisia/Sousse/Sousse/TUI-SENSIMAR-Scheherazade">Tui Blue Scheherazade 4*</a>
+								</li>
+								<li>
+									<a href="http://agent.tui.ru/Tours/Africa/Tunisia/Hammamet/Hammamet/tui-blue-oceana">Tui Blue Oceana 5*</a>
+								</li>
+								<li>
+									<a href="http://agent.tui.ru/Tours/Africa/Tunisia/Hammamet/Yasmine-Hammamet/medina-diar-lemdina">Medina Diar Lemdina 4*</a>&nbsp;
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="line">
+					<div class="akcii-sroki-uslovia">
+						<div class="ActionPage-description__text butsl" id="only-adults">
+							Only adults<span class="arrow_right">▼</span>
+						</div>
+						<div class="sliderList">
+							<ul class="ul-squre colspace_ul">
+								<li>
+									<a href="https://agent.tui.ua/Tours/Africa/Tunisia/Sousse/Sousse/TUI-SENSIMAR-Scheherazade">Tui Blue Scheherazade 4*</a>
+								</li>
+								<li>
+									<a href="http://agent.tui.ru/Tours/Africa/Tunisia/Hammamet/Hammamet/tui-blue-oceana">Tui Blue Oceana 5*</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="best-offer">
+			<div class="container">
+				<div class="row justify-content-center">
+					<h3 class="title text-font text-centre"><strong>Дополнительные услуги в Тунисе</strong></h3>
+				</div>
+				<div class="row what_row">
+					&nbsp;
+				</div>
+				<div class="row">
+					<p>Сделайте отдых ваших туристов в Тунисе еще комфортнее - предложите, забронировать экскурсию.</p>
+					<div class="col col-md-6">
+						<div><img src="https://agent.tui.ru/getmedia/bf401442-944d-4f5b-bf19-3805617f6dd8/shutterstock_97090502"></div>
+					</div>
+					<div class="col col-md-6">
+						<div><img src="https://agent.tui.ru/getmedia/239ef674-891b-492a-9e8a-48226e91e180/shutterstock_234086089"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-md-6">
+						<div><img src="https://agent.tui.ru/getmedia/5510b45d-01e1-45df-ae5c-3923898b2e95/shutterstock_692296747"></div>
+					</div>
+					<div class="col col-md-6">
+						<div><img src="https://agent.tui.ru/getmedia/1c53487a-2938-4fde-b7ec-b3605dd7f184/shutterstock_778744606"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<ul class="ul-squre">
+							<li>
+								<p>Самые яркие экскурсии: Прекрасное &ldquo;комбо&rdquo; Тунис + Карфаген + Сиди-Бу-Саид; экскурсия в пустыню Сахара; поездки на квадроциклах или в караване на верблюдах; дайвинг, морские прогулки.</p>
+							</li>
+							<!--<li>
+								<p><a href="https://agent.tui.ua/good-to-know/comfort-class" style="color: blue;" target="_blank">Услуга &ldquo;COMFORT&rdquo;: бронирование мест в самолете</a></p>
+							</li>
+							<li>
+								<p><a href="https://agent.tui.ua/Countries/Tunisia/Additionally" style="color: blue;" target="_blank">Индивидуальные трансферы (указаны ориентировочные цены)</a></p>
+							</li>
+							<li>
+								<p><a href="https://agent.tui.ua/Information-page/Aeroexpress.aspx" style="color: blue;" target="_blank">Билеты на аэроэкспресс</a></p>
+							</li>
+							<li>
+								<p><a href="https://agent.tui.ua/Partnership/insurance" style="color: blue;" target="_blank">Страхование</a></p>
+							</li>
+							<li>
+								<p><a href="https://agent.tui.ua/foxford" style="color: blue;" target="_blank">Школа ФОКСФОРД</a></p>
+							</li>-->
+						</ul>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<h3 class="title text-font text-centre"><strong>Характеристика курортов Туниса</strong></h3>
+				</div>
+				<div class="row">
+					<p><strong>Аэропорт вылета/прилета:</strong> Энфида<br>
+					<strong>Сезон пляжного отдыха:</strong> с конца апреля до конца октября<br>
+					<strong>Туристический налог:</strong> распространяется на всех туристов старше 12 лет, подлежит оплате в тунисских динарах по прибытии в отель. Размер налога зависит от категории отеля: 3 динара с человека за ночь в отеле 4*- 5*, 2 динара с человека за ночь в отеле 3*. Туристы оплачивают максимально 7 ночей, даже если проживают 21 ночь (максимальная сумма налога составляет 21 динар с человека).<br>
+					<strong>Особенности отдыха в Тунисе:</strong> здесь слабо развита анимация, но страна подкупает своим выбором экскурсионных программ, обилием клубов и ресторанов. Пляжи - муниципальные, отели категорий 4* и 5* предлагают своим постояльцам зонтики и шезлонги бесплатно. Также работники отелей следят за чистотой на прилегающей пляжной территории.</p><br>
+					&nbsp;
+				</div>
+				<div class="row">
+					<h5><strong>Хаммамет</strong></h5>
+				</div>
+				<div class="row">
+					<div class="col col-md-6">
+						<div><img src="https://agent.tui.ru/getmedia/e8762860-57b6-4159-8452-19b778801001/shutterstock_544668781"></div>
+					</div>
+					<div class="col col-md-6">
+						<div><img src="https://agent.tui.ru/getmedia/2a23f13b-3fab-4741-b8ba-516f32b5a6fe/shutterstock_1210035367"></div>
+					</div>
+				</div>
+				<div class="row">
+					<p>Курорт расположен в 48 км относительно аэропорта, славится своими песчаными пляжами и центрами талассотерапии, соответствующими всем современным стандартам сервиса. Днем здесь царит спокойствие, а по вечерам комфортный тихий отдых объединяется с насыщенной ночной жизнью. На побережье расположено множество ресторанов, клубов, дискотек и баров. Есть возможность отправиться на экскурсию в Сахару, в зоопарк &laquo;Фригия&raquo;, в обзорную поездку на мыс Бон и др. Отдых в Хаммамете подходит для всех категорий туристов.</p><br>
+					&nbsp;
+				</div>
+				<div class="row">
+					<h5>Махдия</h5>
+				</div>
+				<div class="row">
+					<div class="col col-md-6">
+						<div><img src="https://agent.tui.ru/getmedia/9ee443e6-c0f8-4859-9c20-7d838062573b/shutterstock_117712714"></div>
+					</div>
+					<div class="col col-md-6">
+						<div><img src="https://agent.tui.ru/getmedia/ba62aace-7fdc-4b21-a5fd-f0766459c0c4/shutterstock_676954681"></div>
+					</div>
+				</div>
+				<div class="row">
+					<p>Малолюдный &ldquo;молодой&rdquo; курорт идеально подойдет любителям пляжного отдыха, тишины и спокойствия. Городок пока не особо распиарен среди туристов. При этом здесь есть чистые песчаные пляжи с пологим входом в воду, поговаривают даже, что они лучшие во всём Тунисе, центры талассотерапии, масса спортивных развлечений, в том числе дайвинг, и масса местных уютных кафе и ресторанчиков. Курорт служит отличной отправной точкой для обзорных экскурсий по городам Махдия, Эль-Джем, Дугга. Также стоит рекомендовать туристам посетить лазерное шоу Медина Эль Захра.</p><br>
+					&nbsp;
+				</div>
+				<div class="row">
+					<h5>Монастир</h5>
+				</div>
+				<div class="row">
+					<div class="col col-md-6">
+						<div><img src="https://agent.tui.ru/getmedia/974176ec-75ed-4d38-998d-14e054fe01c8/shutterstock_1345572815"></div>
+					</div>
+					<div class="col col-md-6">
+						<div><img src="https://agent.tui.ru/getmedia/6b0dd8d2-0b6e-4873-bc89-c2307e1bdf74/shutterstock_1415893358"></div>
+					</div>
+				</div>
+				<div class="row">
+					<p>Бюджетный и довольно комфортабельный курорт, предлагающий хороший сервис по умеренным ценам. Подходит для отдыха всех категорий туристов, каждый находит здесь что-то интересное для себя. Городок расположен в окружении тропических садов, из развлечений Монастир может предложить рестораны, магазины и несколько дискотек, сосредоточенных в центре курорта. Также здесь есть центр подводного плавания, яхт-клуб, гольф- клуб, картинг-центр и школа верховой езды в Сканесе. Рядом с отелями раскинулись песчаные пляжи, а в центре города - каменистые и обрывистые.</p><br>
+					&nbsp;
+				</div>
+				<div class="row">
+					<h5>Сусс</h5>
+				</div>
+				<div class="row">
+					<div class="col col-md-6">
+						<div><img src="https://agent.tui.ru/getmedia/2dfa45aa-4c11-4af6-a332-f98851fdb9ad/shutterstock_560089576"></div>
+					</div>
+					<div class="col col-md-6">
+						<div><img src="https://agent.tui.ru/getmedia/a9c5aa6e-37cc-4dd3-aae8-aa395cda5c7b/shutterstock_562040539"></div>
+					</div>
+				</div>
+				<div class="row">
+					<p>Тунисский &ldquo;король вечеринок&rdquo;, самый крупный молодежный курорт страны, известен своей бурной ночной жизнью и дискотеками. Расположен близко относительно аэропорта, окружен садами оливкового дерева. Здесь расположено множество ресторанчиков, а также Дом мороженого и зоопарк. В центре курорта масса рыбных ресторанов, магазинов и сувенирных лавок. Песчаные пляжи с пологим входом в воду. Курорт стоит рекомендовать молодым парам, большим компаниям, любителям активного и экскурсионного отдыха.</p><br>
+					&nbsp;
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer style="display: none;">
+		<section class="pick-up-tour">
+			<div class="container">
+				<div class="row">
+					<div class="blue__but" style="padding: 50px 0;">
+						<a class="footer-btn" href="/getmedia/11777209-0df5-4976-a835-aa2d207cf737/%d0%a8%d0%bf%d0%b0%d1%80%d0%b3%d0%b0%d0%bb%d0%ba%d0%b0_%d0%a2%d1%83%d0%bd%d0%b8%d1%81-%d0%bb%d0%b5%d1%82%d0%be-2020" target="_blank">Скачать шпаргалку</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript">
+	</script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" type="text/javascript">
+	</script> 
+	<script src="https://www.tui.ua/getmedia/3e4be01e-3aa3-483a-ba1b-807e54636f97/common" type="text/javascript">
+	</script> 
+	<script type="text/javascript">
+	</script> 
+	<script type="text/javascript">
+	   $(document).ready(function () {
+
+	       $(window).scroll(function () {
+	           if ($(this).scrollTop() > 100) {
+	               $('.arrow_up').fadeIn();
+	           } else {
+	               $('.arrow_up').fadeOut();
+	           }
+	       });
+
+	       $('.arrow_up').click(function () {
+	           $("html, body").animate({
+	               scrollTop: 0
+	           }, 600);
+	           return false;
+	       });
+
+	   });
+	</script> 
+	<script type="text/javascript">
+	   $('#d-day').appendTo('#discount');
+
+	   /*$(window).scroll(function(){
+	   if ( $(window).width() < 576 ) {
+	      if ($(this).scrollTop() > 100) {
+	          $('.countdown').fadeIn();
+	          }
+	      else {
+	          $('.countdown').fadeOut();
+	      }
+	   }
+	   });*/
+	</script> 
+	<script type="text/javascript">
+	   var all = document.querySelectorAll('.countries');
+	   for (var i = 0; i < all.length; i++) {
+	       all[i].onclick = function () {
+	           this.nextElementSibling.classList.toggle('expanded');
+	           this.children[1].classList.toggle('transformer');
+	       }
+	   };
+
+	   var butsl = document.querySelectorAll(".butsl");
+	   var sliderList = document.querySelectorAll(".sliderList");
+	   var listHotelValue2 = document.querySelector(`[data-hotelListIndex='11']`);
+	   var listHeight = [];
+
+	   (function () {
+	       for (var i = 0; i < sliderList.length; i += 1) {
+	           listHeight.push(sliderList[i].offsetHeight);
+	       }
+	   })();
+
+	   function clickTableElemt(e) {
+	       var index = e.target.closest(".butsl").dataset.buttonsindex;
+	       var list = document.querySelector(`[data-ListIndex='${index}']`);
+	       list.classList.toggle("hotelDisplayDisable");
+	       list.classList.toggle("hotelDisplayActive");
+	       if (list.getAttribute("style")) {
+	           list.removeAttribute("style")
+	       } else {
+	           list.setAttribute("style", "height:" + (listHeight[index] + 30) + "px");
+	       }
+	   }
+	   setTimeout(function () {
+	       for (var i = 0; i < sliderList.length; i += 1) {
+	           sliderList[i].classList.add('hotelDisplayDisable');
+	           sliderList[i].setAttribute("data-ListIndex", i);
+	           butsl[i].setAttribute("data-buttonsIndex", i);
+	       }
+	   }, 500);
+
+	   window.addEventListener("click", clickTableElemt)
+
+	   var elCollection = document.getElementsByClassName("butsl");
+	   var elNodes = document.querySelectorAll(".butsl");
+
+	   window.addEventListener("click", function (e) {
+	       for (var i = 0; i < elCollection.length; i++) {
+	           if (e.target === elCollection[i]) {
+	               elCollection[i].querySelector('.arrow_right').classList.toggle("activity")
+	           } else if (e.target === elCollection[i].querySelector(".arrow_right")) {
+	               elCollection[i].querySelector(".arrow_right").classList.toggle("activity");
+	           }
+	       }
+	   })
+
+	   var menuClick = document.querySelectorAll('#menu a')
+	   for (let i = 0; i < menuClick.length; i++) {
+	       menuClick[i].onclick = function () {
+	           var elemntsClick = menuClick[i].hash.split('#');
+	           elemntsClick = eval(elemntsClick[1]);
+	           elemntsClick.click();
+	       }
+	   }
+	</script>
+</body>
+</html>
