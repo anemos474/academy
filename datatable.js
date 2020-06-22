@@ -139,6 +139,7 @@ for(let i = 0; i<allRegions.length; i++){
 function showMenu(e){
     let menu            = document.querySelector('.region__list'),
         news            = document.querySelectorAll('.blocks__news'),
+        table           = document.querySelectorAll('.table__wrap'),
         calendarsDay    = document.querySelectorAll('.boxes');
     menu.classList.toggle('visible');
     e.classList.toggle('visible__rot');
@@ -148,7 +149,10 @@ function showMenu(e){
     });
     calendarsDay.forEach((elemts)=>{
         elemts.classList.toggle('back__side')
-    })
+    });
+    table.forEach((elemts)=>{
+        elemts.classList.toggle('back__side')
+    });
 };
 // Переключалка календаря и плитки
 iconsChange[0].onclick = function(){
@@ -279,14 +283,46 @@ function createTavle(){
 // Создание плитки
 let chocolats = () =>{
     let shoblon         = (d) => {
+        let tegsNumber = dataBox[d].tegs.split(',');
+        let tegLine = "";
+        for(let i = 0; i<tegsNumber.length; i++){
+            tegLine += `<div class="tegs__title">${dataBox[d].tegs.split(',')[i]}</div>`
+        }
         return `
         <div class="choco__wrap">
             <div class="choco__box">
-                <img class="img__speaker" src="https://agent.tui.ru/getmedia/72ff05cd-4d8a-4c2b-9559-993c93dd6f0f/icon_ecpert" data-name="${dataBox[d].speacers}">
-                <div class="specers__title">${dataBox[d].speacers}</div>
-                <div class="specers__subTitle">${dataBox[d].position}</div>
+                <div class="f-1">
+                    <img class="img__speaker" src="https://agent.tui.ru/getmedia/72ff05cd-4d8a-4c2b-9559-993c93dd6f0f/icon_ecpert" data-name="${dataBox[d].speacers}">
+                    <div class="specers__title">${dataBox[d].speacers}</div>
+                    <div class="specers__subTitle">${dataBox[d].position}</div>
+                </div>
             </div>
-            <div class="choco__box"></div>
+            <div class="choco__box">
+                <div class="f-2">
+                    <div class="choco-wrap__line">
+                        <div class="choco-wrap__title">${dataBox[d].type}</div>
+                        <div class="heart__svg-choco" onclick="favorite(this);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 4.59499C10.9104 3.59309 9.48419 3.03703 8.00398 3.03699C7.22052 3.0378 6.44495 3.19355 5.72192 3.49526C4.99888 3.79696 4.34265 4.23868 3.79098 4.79499C1.43798 7.15799 1.43898 10.854 3.79298 13.207L11.125 20.539C11.5 21 12 21 12 21C12 21 12.5 21 12.792 20.622L20.207 13.207C22.561 10.853 22.561 7.15799 20.205 4.79099C19.6536 4.2357 18.9979 3.79488 18.2756 3.49387C17.5532 3.19286 16.7785 3.03759 15.996 3.03699C14.5158 3.03723 13.0897 3.59326 12 4.59499ZM18.791 6.20499C20.354 7.77599 20.355 10.23 18.793 11.793L12 18.586L5.20698 11.793C3.64498 10.23 3.64598 7.77599 5.20498 6.20899C5.96498 5.45299 6.95898 5.03699 8.00398 5.03699C9.04898 5.03699 10.039 5.45299 10.793 6.20699C11.26 6.674 12 7.99998 12 7.99998C12 7.99998 12.7401 6.67386 13.207 6.20699C14.719 4.69799 17.281 4.70199 18.791 6.20499Z" fill="#B9B9B9"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="choco__body">
+                        <div class="body__title">${dataBox[d].subject}</div>
+                        <div class="body__subtitle">${dataBox[d].description}</div>
+                    </div>
+                    <div class="choco__tegs">
+                        <div class="tegs__wrap">${tegLine}</div>
+                    </div>
+                    <div class="choco__bottom-line">
+                        <div class="choco__btn">
+                            <a class="choco__link" href="${dataBox[d].link}" target="_blank">Регистрация </a>
+                        </div>
+                        <div class="choco__time">${dataBox[d].type != "Рекламный тур" ? `<span class="choco__bottom-text">Время:</span> <span class="time">${dataBox[d].timeStart}</span>` : ''}</div>
+                        <div class="choco__data">${dataBox[d].type != "Рекламный тур" ? `<span class="choco__bottom-text">Дата:</span> <span class="data__start">${dataBox[d].dateIvents}</span>` : `<span class="choco__bottom-text">Дата:</span> <span class="data__start">${dataBox[d].dateIvents.split(',')[0]}</span>`}</div>
+                    </div>
+                </div>
+            </div>
         </div>
         `};
         for(let j = 0; j<dataBox.length; j++){
@@ -317,7 +353,9 @@ let chocolats = () =>{
             checkRit();
             changeIcons();
         }
-        
+        addBtn();
+        showBlocks();
+        addIcons();
 };
 
 //Подстановка фото спикеров
@@ -332,3 +370,46 @@ function changeIcons(){
         }
     }
 };
+//добавить кнопку
+function addBtn(){
+    let box = plitkaChocolat.querySelectorAll('.table__wrap');
+    let btnShown = document.createElement('div');
+        btnShown.classList.add('show_me__more');
+        btnShown.innerHTML = "<div onclick='showMe(this)'>Показать больше</div>";
+        if(box.length > 5){
+            calendar.appendChild(btnShown);
+        }
+};
+//показать первые 6 плиток
+function showBlocks(){
+    let box = plitkaChocolat.querySelectorAll('.table__wrap');
+        for(let i = 0; i<6; i++){
+            box[i].classList.add('shown');
+        };
+};
+//показать еще 3 блока
+function showMe(e){
+    let boxes = plitkaChocolat.querySelectorAll('.table__wrap');
+    let breakPoints	= plitkaChocolat.querySelectorAll('.table__wrap.shown').length + 2;
+    for(let i = 0; i<boxes.length; i++){
+        if (i == breakPoints) {break;}
+        else if (boxes[i].classList.contains('shown')){	}
+        else {boxes[i].classList.add('shown')}
+        if(i == boxes.length-1){e.style.display = "none"}
+    }
+};
+//Иконки в плитку по типу мероприятия
+function addIcons(){
+    let boxTitle = plitkaChocolat.querySelectorAll('.choco-wrap__title'),
+        fatherBox = plitkaChocolat.querySelectorAll('.choco-wrap__line');
+    for(let i = 0; i<boxTitle.length; i++){
+        for(let j = 0; j<dataIcons.length; j++){
+            if(boxTitle[i].innerHTML == dataIcons[j].namesType){
+                let divBloc = document.createElement('div');
+                    divBloc.classList.add('choco_svg')
+                    divBloc.innerHTML = dataIcons[j].src;
+                    fatherBox[i].insertBefore(divBloc, fatherBox[i].children[0]);
+            }else{}
+        }
+    }
+}
