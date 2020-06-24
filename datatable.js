@@ -215,10 +215,17 @@ let addIvents = () =>{
     let fatherDays      = document.querySelectorAll('.events__box'),
         calendarsDay    = document.querySelectorAll('.boxes');
         shoblon         = (d) => {
-            return `<div class="event__line"><div class="hide__overflovs"><span class="event__data">${dataBox[d].timeStart}</span> <span class="event__name">${dataBox[d].subject}</span></div><div class="heart__svg" onclick="favorite(this);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11899 0.666779C2.31764 0.666779 1.52058 0.981668 0.913125 1.61376C-0.301811 2.87793 -0.3053 4.90692 0.90823 6.17205L5.76905 11.2406C5.88672 11.3643 6.11032 11.3643 6.22799 11.2406C7.84948 9.55337 9.46731 7.86422 11.0888 6.17694C12.3037 4.91277 12.3037 2.88286 11.0888 1.61867C9.87389 0.354488 7.88705 0.354459 6.67213 1.61867L6.00099 2.31051L5.32985 1.61376C4.67487 0.929612 3.86336 0.663466 3.11903 0.666779H3.11899Z" fill="#3C3C3C"/>
-            </svg></div></div>
+            return `
+            <div class="event__line" onclick="popChoco(this)" data-attrtype="${dataBox[d].type}" data-attrdateIvents="${dataBox[d].dateIvents}" data-attrtimeStart="${dataBox[d].timeStart}" data-attrsubject="${dataBox[d].subject}" data-attrspeacers="${dataBox[d].speacers}" data-attrposition="${dataBox[d].position}" data-attrdescription="${dataBox[d].description}" data-attrlink="${dataBox[d].link}" data-attrtegs="${dataBox[d].tegs}">
+                <div class="hide__overflovs">
+                    <span class="event__data">${dataBox[d].timeStart}</span> <span class="event__name">${dataBox[d].subject}</span>
+                </div>
+                <div class="heart__svg" onclick="favorite(this);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.11899 0.666779C2.31764 0.666779 1.52058 0.981668 0.913125 1.61376C-0.301811 2.87793 -0.3053 4.90692 0.90823 6.17205L5.76905 11.2406C5.88672 11.3643 6.11032 11.3643 6.22799 11.2406C7.84948 9.55337 9.46731 7.86422 11.0888 6.17694C12.3037 4.91277 12.3037 2.88286 11.0888 1.61867C9.87389 0.354488 7.88705 0.354459 6.67213 1.61867L6.00099 2.31051L5.32985 1.61376C4.67487 0.929612 3.86336 0.663466 3.11903 0.666779H3.11899Z" fill="#3C3C3C"/>
+                    </svg>
+                </div>
+            </div>
         `};
     for(let i = 0; i<calendarsDay.length; i++){
         for(let j = 0; j<dataBox.length; j++){
@@ -411,5 +418,77 @@ function addIcons(){
                     fatherBox[i].insertBefore(divBloc, fatherBox[i].children[0]);
             }else{}
         }
+    }
+}
+//поп-ап плитка на основном календаре
+function popChoco(e){
+    let tegsNumber = e.dataset.attrtegs.split(',');
+    let divBlock = document.createElement('div');
+        divBlock.classList.add('pop_up')
+    let tegLine = "";
+    for(let i = 0; i<tegsNumber.length; i++){
+        tegLine += `<div class="tegs__title">${tegsNumber[i]}</div>`
+    };
+    p3.innerHTML = "";
+    divBlock.innerHTML = `
+    <div class="choco__wrap">
+    <div class="choco__box">
+        <div class="f-1">
+            <img class="img__speaker" src="https://agent.tui.ru/getmedia/72ff05cd-4d8a-4c2b-9559-993c93dd6f0f/icon_ecpert" data-name="${e.dataset.attrspeacers}">
+            <div class="specers__title">${e.dataset.attrspeacers}</div>
+            <div class="specers__subTitle">${e.dataset.attrposition}</div>
+        </div>
+    </div>
+    <div class="choco__box">
+        <div class="f-2">
+            <div class="choco-wrap__line">
+                <div class="choco-wrap__title">${e.dataset.attrtype}</div>
+                <div class="heart__svg-choco" onclick="favorite(this);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 4.59499C10.9104 3.59309 9.48419 3.03703 8.00398 3.03699C7.22052 3.0378 6.44495 3.19355 5.72192 3.49526C4.99888 3.79696 4.34265 4.23868 3.79098 4.79499C1.43798 7.15799 1.43898 10.854 3.79298 13.207L11.125 20.539C11.5 21 12 21 12 21C12 21 12.5 21 12.792 20.622L20.207 13.207C22.561 10.853 22.561 7.15799 20.205 4.79099C19.6536 4.2357 18.9979 3.79488 18.2756 3.49387C17.5532 3.19286 16.7785 3.03759 15.996 3.03699C14.5158 3.03723 13.0897 3.59326 12 4.59499ZM18.791 6.20499C20.354 7.77599 20.355 10.23 18.793 11.793L12 18.586L5.20698 11.793C3.64498 10.23 3.64598 7.77599 5.20498 6.20899C5.96498 5.45299 6.95898 5.03699 8.00398 5.03699C9.04898 5.03699 10.039 5.45299 10.793 6.20699C11.26 6.674 12 7.99998 12 7.99998C12 7.99998 12.7401 6.67386 13.207 6.20699C14.719 4.69799 17.281 4.70199 18.791 6.20499Z" fill="#B9B9B9"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="choco__body">
+                <div class="body__title">${e.dataset.attrsubject}</div>
+                <div class="body__subtitle">${e.dataset.attrdescription}</div>
+            </div>
+            <div class="choco__tegs">
+                <div class="tegs__wrap">${tegLine}</div>
+            </div>
+            <div class="choco__bottom-line">
+                <div class="choco__btn">
+                    <a class="choco__link" href="${e.dataset.attrlink}" target="_blank">Регистрация </a>
+                </div>
+                <div class="choco__time">${e.dataset.attrtype != "Рекламный тур" ? `<span class="choco__bottom-text">Время:</span> <span class="time">${e.dataset.attrtimestart}</span>` : ''}</div>
+                <div class="choco__data">${e.dataset.attrtype != "Рекламный тур" ? `<span class="choco__bottom-text">Дата:</span> <span class="data__start">${e.dataset.attrdateivents}</span>` : `<span class="choco__bottom-text">Дата:</span> <span class="data__start">${e.dataset.attrdateivents.split(',')[0]}</span>`}</div>
+            </div>
+        </div>
+    </div>
+    </div>
+    `;
+    p3.style.display = "block";
+    p3.appendChild(divBlock);
+    changeIcons();
+    function addIcon(){
+        let boxTitle = p3.querySelectorAll('.choco-wrap__title'),
+            fatherBox = p3.querySelectorAll('.choco-wrap__line');
+        for(let i = 0; i<boxTitle.length; i++){
+            for(let j = 0; j<dataIcons.length; j++){
+                if(boxTitle[i].innerHTML == dataIcons[j].namesType){
+                    let divBloc = document.createElement('div');
+                        divBloc.classList.add('choco_svg')
+                        divBloc.innerHTML = dataIcons[j].src;
+                        fatherBox[i].insertBefore(divBloc, fatherBox[i].children[0]);
+                }else{}
+            }
+        }
+    };
+    addIcon();
+}
+//скрыть поп-ап плитка при клике
+window.onclick = function (e){
+    if(e.target.classList != 'event__name'){
+        p3.style.display = "none";
     }
 }
