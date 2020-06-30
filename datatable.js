@@ -11,7 +11,9 @@ let dateNow     = new Date(),
     allRegions  = document.querySelectorAll('.region__list li'),
     iconsChange = document.querySelectorAll('.change__icons'),
     howMuch     = 11 - dateNow.getMonth(),
-    attrM       = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+    attrM       = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+    submitted   = false,
+    redirectLin = 'https://agent.tui.ru';
 
 const starter       = dateNow.getMonth();
 const curentYear    = dateNow.getFullYear();
@@ -299,7 +301,7 @@ let chocolats = () =>{
         <div class="choco__wrap">
             <div class="choco__box">
                 <div class="f-1">
-                    <img class="img__speaker" src="https://agent.tui.ru/getmedia/72ff05cd-4d8a-4c2b-9559-993c93dd6f0f/icon_ecpert" data-name="${dataBox[d].speacers}">
+                    <img class="img__speaker" src="https://agent.tui.ru/getmedia/15bb3f79-c24f-46be-a729-8fe17f2e97a8/expert__icon" data-name="${dataBox[d].speacers}">
                     <div class="specers__title">${dataBox[d].speacers}</div>
                     <div class="specers__subTitle">${dataBox[d].position}</div>
                 </div>
@@ -323,7 +325,7 @@ let chocolats = () =>{
                     </div>
                     <div class="choco__bottom-line">
                         <div class="choco__btn">
-                            <a class="choco__link" href="${dataBox[d].link}" target="_blank">Регистрация </a>
+                            <a class="choco__link" onclick="register(this);" data-link="${dataBox[d].link}">Регистрация </a>
                         </div>
                         <div class="choco__time">${dataBox[d].type != "Рекламный тур" ? `<span class="choco__bottom-text">Время:</span> <span class="time">${dataBox[d].timeStart}</span>` : ''}</div>
                         <div class="choco__data">${dataBox[d].type != "Рекламный тур" ? `<span class="choco__bottom-text">Дата:</span> <span class="data__start">${dataBox[d].dateIvents}</span>` : `<span class="choco__bottom-text">Дата:</span> <span class="data__start">${dataBox[d].dateIvents.split(',')[0]}</span>`}</div>
@@ -434,7 +436,7 @@ function popChoco(e){
     <div class="choco__wrap">
     <div class="choco__box">
         <div class="f-1">
-            <img class="img__speaker" src="https://agent.tui.ru/getmedia/72ff05cd-4d8a-4c2b-9559-993c93dd6f0f/icon_ecpert" data-name="${e.dataset.attrspeacers}">
+            <img class="img__speaker" src="https://agent.tui.ru/getmedia/15bb3f79-c24f-46be-a729-8fe17f2e97a8/expert__icon" data-name="${e.dataset.attrspeacers}">
             <div class="specers__title">${e.dataset.attrspeacers}</div>
             <div class="specers__subTitle">${e.dataset.attrposition}</div>
         </div>
@@ -458,7 +460,7 @@ function popChoco(e){
             </div>
             <div class="choco__bottom-line">
                 <div class="choco__btn">
-                    <a class="choco__link" href="${e.dataset.attrlink}" target="_blank">Регистрация </a>
+                    <a class="choco__link" onclick="register(this);" data-link="${e.dataset.attrlink}">Регистрация </a>
                 </div>
                 <div class="choco__time">${e.dataset.attrtype != "Рекламный тур" ? `<span class="choco__bottom-text">Время:</span> <span class="time">${e.dataset.attrtimestart}</span>` : ''}</div>
                 <div class="choco__data">${e.dataset.attrtype != "Рекламный тур" ? `<span class="choco__bottom-text">Дата:</span> <span class="data__start">${e.dataset.attrdateivents}</span>` : `<span class="choco__bottom-text">Дата:</span> <span class="data__start">${e.dataset.attrdateivents.split(',')[0]}</span>`}</div>
@@ -491,4 +493,47 @@ window.onclick = function (e){
     if(e.target.classList != 'event__name'){
         p3.style.display = "none";
     }
+}
+//форма
+function register(e){
+    let formBlock = document.createElement('div');
+    formBlock.classList.add('form__wrap');
+    formBlock.innerHTML = `
+    <div class="forms__content">
+        <div class="forms__wrap">
+            <div class="closs__icons"><img src="https://agent.tui.ru/getmedia/5058bd80-3af5-429c-b818-eb12bfabd2e2/Path" onclick="closedForm();"></div>
+            <div class="form__title">Регистрация на мероприятие</div>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)  {window.location=redirectLin}"></iframe>
+            <form class="forms" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdWlmfcLUFtibC2pdQyVzowBfEjD9tYZM0wTKyLYJUSe-_hwg/formResponse" method="post"   onsubmit="submitted=!0" target="hidden_iframe">
+                <input class="form__line" name="entry.2063414219" type="text" required placeholder="Имя"/>
+                <input class="form__line" name="entry.2087926678" type="text" required placeholder="Фамилия"/>
+                <input class="form__line" name="entry.310722730" type="email" required placeholder="E-mail рабочий"/>
+                <input class="form__line" name="entry.745124669" type="tel" required placeholder="+7"/>
+                <div class="form__cheks">
+                    <input class="form__box" name="entry.1891018554" type="checkbox" required />
+                    <span class="checkmark"></span>
+                    <label>Я ознакомлен с положениями о конфиденциальности и защите персональных данных</label>
+                    <br><br>
+                    <input class="form__box" name="entry.622322615" type="checkbox" required />
+                    <span class="checkmark"></span>
+                    <label>Я ознакомлен и согласен с условиями договора оферты</label>
+                </div>
+                <div class="form__btn">
+                    <input type="submit" value="Подать заявку" />
+                </div>
+            </form>
+        </div>
+    </div>
+    `;
+    if(e.dataset.attrlink != ''){
+        redirectLin = e.dataset.link;
+    }
+    hidenForm.appendChild(formBlock);
+    hidenForm.classList.add('shown');
+}
+//Закрыть форму
+function closedForm(){
+    hidenForm.innerText = '';
+    hidenForm.classList.remove('shown');
+    redirectLin = 'https://agent.tui.ru'
 }
