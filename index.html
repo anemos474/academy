@@ -3,10 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>Академия TUI</title>
-        <link href="https://agent.tui.ru/getmedia/4eb4754e-d588-41cc-96f4-a95999510965/style" rel="stylesheet">
+        <link href="https://agent.tui.ru/getmedia/aae93a21-102d-4fe9-b42c-804f7618b477/style" rel="stylesheet">
         <link href="https://agent.tui.ru/getmedia/41d734d1-ade9-4302-9a90-708609029c28/lightslider-min" rel="stylesheet">
         <!--<link href="/css/lightslider.min.css" rel="stylesheet">-->
         <link href="/css/style.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     </head>
     <body>
         <div id="premeAcademy">
@@ -403,14 +404,36 @@
     <script src="/dataImages.js"></script>
     <script src="/datatable.js"></script>
     <script src="https://agent.tui.ru/getmedia/ab584c3a-0efb-4f8d-98a4-470d3d7f8950/dataImages"></script>
-    <script src="https://agent.tui.ru/getmedia/a3f0998e-e65e-44fb-8acf-73d067a5464d/datatable"></script>
+    <script src="https://agent.tui.ru/getmedia/200888ea-013d-4bc5-91e3-ad5170d066d5/datatable"></script>
     <script src="https://agent.tui.ru/getmedia/bac22ddb-4bd7-40d5-afee-59258794ecf9/colontitul"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://agent.tui.ru/getmedia/dac832db-0070-4eef-b44e-8490c2274f7c/lightslider"></script>
     <script src="https://agent.tui.ru/getmedia/5394b81b-7173-43a5-8f69-9a6d31ad4c4d/carusel"></script>
     <!--<script src="/carusel.js"></script>
     <script src="/calendar.js"></script>
     <script src="/panel.js"></script>
     <script src="/colontitul.js"></script>-->
+    <script>
+        function placed(){
+            let conForma = p_lt_zoneTop_TUI_Emarsys_subscription_sys_pnlUpdate.cloneNode(true),
+                placeForma = document.querySelector('.forma__box'),
+                bodyWrap = document.querySelector('.forSearchPanel');
+
+            if(window.location.href == "https://agent.tui.ru/Academy-new/academy"){
+                bodyWrap.lastElementChild.remove();
+                placeForma.appendChild(conForma);
+            }
+
+            let agry = document.querySelectorAll('.subscriptionsign');
+            agry[0].onclick = function (){
+                agry[0].classList.toggle('signed');
+                agry[0].classList.toggle('notsigned');
+            };
+        }
+        if (document.readyState == 'loading') {
+            document.addEventListener('DOMContentLoaded', placed)
+        } else {
+            placed()
+        }
+    </script>
     </body>
 </html>

@@ -10,13 +10,13 @@ let dateNow     = new Date(),
     clickRight  = document.querySelector('.arrow__right'),
     allRegions  = document.querySelectorAll('.region__list li'),
     iconsChange = document.querySelectorAll('.change__icons'),
-    howMuch     = 11 - dateNow.getMonth(),
+    howMuch     = dateNow.getMonth(),
     attrM       = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
     submitted   = false,
     redirectLin = 'https://agent.tui.ru';
 
 const starter       = dateNow.getMonth();
-const curentYear    = dateNow.getFullYear();
+let curentYear    = dateNow.getFullYear();
 
 //старт текущего месяца
 currentMounth.innerHTML = monthNames[dateNow.getMonth()] + ' ' + curentYear;
@@ -33,7 +33,7 @@ function createCalendar(elem, year, month, dd, h, m, s) {
     }
 
     while (d.getMonth() == mon) {
-      table += '<div class="boxes" calendardata="'+ d.getDate() +'.'+ d.toJSON().split('-')[1] +'.'+ year +'"><div class="number__day"><div class="colorred__day">' + d.getDate() + '</div></div><div class="events__box"></div></div>';
+      table += '<div class="boxes yesday" calendardata="'+ d.getDate() +'.'+ d.toJSON().split('-')[1] +'.'+ year +'"><div class="number__day"><div class="colorred__day">' + d.getDate() + '</div></div><div class="events__box"></div></div>';
       d.setDate(d.getDate() + 1);
     }
 
@@ -55,15 +55,20 @@ function getDay(date) {
 // Листание календаря
 function moveRight(e){
     function check(){
-        if(startMonth == 11){
+        if(startMonth == 11 || howMuch == 11){
             e.classList.add('hides')
-        }else{}
+            // ############################### раскоментировать в конце года ########################
+            //startMonth = -1;
+            //howMuch = -1;
+            //curentYear = curentYear + 1;
+        }
+        else{}
     };
     if(iconsChange[0].classList.contains('actives')){
         startMonth = startMonth + 1;
         howMuch = howMuch + 1;
         currentMounth.innerHTML = monthNames[startMonth] + ' ' + curentYear;
-        createCalendar(calendar, 2020, startMonth, 1, 19, 59, 59);
+        createCalendar(calendar, curentYear, startMonth, 1, 19, 59, 59);
         clickLeft.classList.remove('hides')
         addIvents();
         check();
@@ -78,25 +83,31 @@ function moveRight(e){
 };
 function moveLeft(e){
     function check(){
-        if(startMonth == starter){
+        if(startMonth == starter || howMuch == starter){//startMonth == 0 || howMuch == 0 заменить в конце года для листания календаря
             e.classList.add('hides')
+            // ############################### раскоментировать в конце года ########################
+            //startMonth = 12;
+            //howMuch = 12;
+            //curentYear = curentYear - 1;
         }else{}
     };
     if(iconsChange[0].classList.contains('actives')){
+        //check(); // ############################### раскоментировать в конце года ########################
         startMonth = startMonth - 1;
         howMuch = howMuch - 1;
         currentMounth.innerHTML = monthNames[startMonth] + ' ' + curentYear;
-        createCalendar(calendar, 2020, startMonth, 1, 19, 59, 59);
+        createCalendar(calendar, curentYear, startMonth, 1, 19, 59, 59);
         clickRight.classList.remove('hides')
         addIvents();
-        check();
+        check();// закоментировать в конце года
     }else{
+        //check(); // ############################### раскоментировать в конце года ########################
         startMonth = startMonth - 1;
         currentMounth.innerHTML = monthNames[startMonth] + ' ' + curentYear;
         clickRight.classList.remove('hides')
         howMuch = howMuch - 1;
         createTavle();
-        check();
+        check();// закоментировать в конце года
     }
 };
 // Деплой календаря
@@ -271,7 +282,7 @@ function checkRit() {
 };
 //сегодняшняя дата
 function curDday() {
-    let calendarsDay    = document.querySelectorAll('.boxes'),
+    let calendarsDay    = document.querySelectorAll('.yesday'),
         dayBox          = document.querySelectorAll('.colorred__day'),
         dday            = dateNow.getDate() +'.'+ dateNow.toJSON().split('-')[1] +'.'+ dateNow.getFullYear();
         for(let i = 0; i<calendarsDay.length; i++){
@@ -285,7 +296,7 @@ function createTavle(){
     calendar.innerHTML = '';
     let monthBox    = document.createElement('div');
         monthBox.id = 'plitkaChocolat';
-        monthBox.setAttribute('month', attrM[howMuch-1]);
+        monthBox.setAttribute('month', attrM[howMuch]);
         calendar.appendChild(monthBox);
         chocolats();
 }
@@ -359,12 +370,19 @@ let chocolats = () =>{
                     }
                 }
             }
-            checkRit();
-            changeIcons();
+            if(plitkaChocolat.children.length > 0){
+                checkRit();
+                changeIcons();
+            }
         }
-        addBtn();
-        showBlocks();
-        addIcons();
+        if(plitkaChocolat.children.length > 0){
+            addBtn();
+            showBlocks();
+            addIcons();
+        }else{
+            plitkaChocolat.innerHTML = `<div class="no__event">Активных мероприятий нет</div>`
+        }
+
 };
 
 //Подстановка фото спикеров
@@ -392,7 +410,10 @@ function addBtn(){
 //показать первые 6 плиток
 function showBlocks(){
     let box = plitkaChocolat.querySelectorAll('.table__wrap');
-        for(let i = 0; i<6; i++){
+        for(let i = 0; i<box.length; i++){
+            if(i == 6){
+                break;
+            }
             box[i].classList.add('shown');
         };
 };
@@ -490,7 +511,7 @@ function popChoco(e){
 }
 //скрыть поп-ап плитка при клике
 window.onclick = function (e){
-    if(e.target.classList != 'event__name'){
+    if(e.target.classList != 'event__name' && e.target.classList != 'event__data'){
         p3.style.display = "none";
     }
 }
